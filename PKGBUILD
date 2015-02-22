@@ -13,7 +13,7 @@ makedepends=('libltdl' 'lcms2' 'libxt' 'fontconfig' 'libxext' 'ghostscript' \
              'opencl-headers' 'libcl' 'libwebp')
 
 source=(ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ImageMagick-${pkgver%.*}-${pkgver##*.}.tar.xz)
-sha1sums=('0233275c2e35264da6c90c163c5436c928352478')
+sha1sums=('83f24ef7346f81ba39d58bf1ef525d79920d9335')
 
 provides=('imagemagick')
 conflicts=('imagemagick')
