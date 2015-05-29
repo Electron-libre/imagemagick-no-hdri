@@ -3,7 +3,7 @@
 # Contributor: Cedric Brancourt <cedric.brancourt at gmail dot com>
 
 pkgname=imagemagick-no-hdri
-pkgver=6.9.0.6
+pkgver=6.9.1.0
 pkgrel=1
 arch=('i686' 'x86_64')
 url="http://www.imagemagick.org/"
@@ -13,7 +13,7 @@ makedepends=('libltdl' 'lcms2' 'libxt' 'fontconfig' 'libxext' 'ghostscript' \
              'opencl-headers' 'libcl' 'libwebp')
 
 source=(http://www.imagemagick.org/download/ImageMagick-${pkgver%.*}-${pkgver##*.}.tar.xz)
-sha1sums=('0233275c2e35264da6c90c163c5436c928352478')
+sha1sums=('7025145482613dee0a0575cb99d0da7e9e157aaf')
 
 provides=('imagemagick')
 conflicts=('imagemagick')
@@ -31,7 +31,7 @@ build() {
     --with-webp --with-gslib --with-gs-font-dir=/usr/share/fonts/Type1 \
     --with-perl --with-perl-options="INSTALLDIRS=vendor" --with-lqr --with-rsvg \
     --enable-opencl --without-gvc --without-djvu --without-autotrace \
-    --without-jbig --without-fpx --without-dps --without-fftw 
+    --without-jbig --without-fpx --without-dps --without-fftw
  make
 }
 
@@ -44,13 +44,13 @@ check() {
 package() {
   pkgdesc="An image viewing/manipulation program"
   depends=('perl' 'libltdl' 'lcms2' 'libxt' 'fontconfig' 'libxext' 'liblqr' 'libcl')
-  optdepends=('ghostscript: for Ghostscript support' 
-              'openexr: for OpenEXR support' 
-              'libwmf: for WMF support' 
-              'librsvg: for SVG support' 
-              'libxml2: for XML support' 
-              'jasper: for JPEG-2000 support' 
-              'libpng: for PNG support' 
+  optdepends=('ghostscript: for Ghostscript support'
+              'openexr: for OpenEXR support'
+              'libwmf: for WMF support'
+              'librsvg: for SVG support'
+              'libxml2: for XML support'
+              'jasper: for JPEG-2000 support'
+              'libpng: for PNG support'
 	      'libwebp: for WEBP support')
   backup=("etc/ImageMagick-${pkgver%%.*}/coder.xml"
           "etc/ImageMagick-${pkgver%%.*}/colors.xml"
